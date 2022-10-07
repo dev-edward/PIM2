@@ -1,0 +1,5 @@
+# 06/10/2022 no intervalo da aula
+integrantes: Carolina, Debora, Edward, Sara
+- Falamos sobre como organizar o PIM e o que precisava ser feito
+- Chegamos a um acordo de usar as ferramentas Git, GitHub, Notion
+- A sara disse que é boa com as regras ABNT, ela quer ficar com essa parte 
