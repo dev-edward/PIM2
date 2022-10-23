@@ -1,0 +1,10 @@
++==============================+
++ 	usuario	|    senha	 +
++ =============================+
++ edward		|	senha1 +
++ carol		|	senha2 +
++ debora		|	senha3 +
++ caio		|	senha4 +
++ sara		|	senha5 +
++ washington	|	senha6 +
+===============================+

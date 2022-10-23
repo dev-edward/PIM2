@@ -3,3 +3,13 @@ integrantes: Carolina, Debora, Edward, Sara
 - Falamos sobre como organizar o PIM e o que precisava ser feito
 - Chegamos a um acordo de usar as ferramentas Git, GitHub, Notion
 - A sara disse que é boa com as regras ABNT, ela quer ficar com essa parte 
+
+# 15/10/2022 reunião através do discord
+integrantes: Caio, Carolina, Debora, Edward, Whashington
+- Divisão de atividades do PIM 
+- Sara: Parte escrita ABNT
+- Edward: Programação
+- Carol: Regras de negócio
+- Debora: Redes
+- Caio: Manual de usuário
+- Washington: Ética

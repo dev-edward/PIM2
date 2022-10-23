@@ -1,0 +1,60 @@
+Tela de Login
+Telas de Cadastros
+Tela de consulta
+Telas relatorio
+Perfils/permissões
+
+tb_login
+-usuario
+-nome
+-senha
+-perfil
+
+
+Funcionario
+-nome
+-chapa
+-id
+-email
+-telefone
+-sexo
+-dt nasc.
+-nacionalidade
+-CPF
+-RG
+-Cart. Trabalho
+-Tipo Sanguineo
+-dt admissão
+-dt demissão
+-endereço
+-cidade
+-estado
+-função
+-salario
+-situação(ativo,demitido,ferias)
+
+
+Aluno
+-RA
+-Nome
+-CPF
+-dt nasc.
+-email
+-escola
+-telefone
+-cidade
+-estado
+-pais
+-usuário
+
+Editora
+-Cod
+-Nome fantasia
+-CNPJ
+-Endereço
+-Cidade
+-Estado
+-Representante
+-Telefone do representante
+
+
