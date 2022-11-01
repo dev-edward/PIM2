@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1666573791 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\desenvolvimento\digitalbook\criarusuario.c
+	<stdio.h>
+	<string.h>
+
+1666573678 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\desenvolvimento\digitalbook\digitalbook.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"login.h"
+	"criarUsuario.h"
+
+1666573883 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\desenvolvimento\digitalbook\login.h
+
+1666573859 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\desenvolvimento\digitalbook\criarusuario.h
+
+1666573899 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\desenvolvimento\digitalbook\login.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1666573678 source:e:\#pro\estudo\unip\semestre 2\pim2\mudança de estrutura\codeblocks\digitalbook.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"login.h"
+	"criarUsuario.h"
+
+1666573883 e:\#pro\estudo\unip\semestre 2\pim2\mudança de estrutura\codeblocks\login.h
+
+1666573859 e:\#pro\estudo\unip\semestre 2\pim2\mudança de estrutura\codeblocks\criarusuario.h
+
+1666573899 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1666837491 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.c
+	<stdio.h>
+	<string.h>
+
+1667267164 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<conio.h>
+	"login.h"
+	"criarUsuario.h"
+	"menus.h"
+	"logo.h"
+
+1666573883 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.h
+
+1666573859 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.h
+
+1667098082 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.c
+
+1666836313 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.h
+
+1667136709 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\abertura.h
+
+1667170594 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\abertura.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1667266737 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\logo.h
+
+1667267164 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\logo.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+

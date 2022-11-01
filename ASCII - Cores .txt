@@ -1,0 +1,66 @@
+
+    int i, j, n;
+	system("cls");
+    for (i = 0; i < 11; i++) {
+
+        for (j = 0; j < 10; j++) {
+            n = 10 * i + j;
+            if (n > 108) break;
+            printf("\033[%dm 0;%d  \033[m", n, n);
+            printf("\033[1;%dm 1;%d \033[m", n, n);
+            printf("\033[2;%dm 2;%d \033[m", n, n);
+            printf("\033[2;%dm 3;%d \033[m", n, n);
+            printf("\033[4;%dm 4;%d \033[m", n, n);
+            printf("\033[5;%dm 5;%d \033[m", n, n);
+            printf("\033[6;%dm 6;%d \033[m", n, n);
+            printf("\033[7;%dm 7;%d \033[m", n, n);
+            printf("\033[8;%dm 8;%d \033[m", n, n);
+            printf("\033[9;%dm 9;%d \033[m", n, n);
+            printf("\033[10;%dm 10;%d \033[m", n, n);
+            printf("\033[11;%dm 11;%d \033[m", n, n);
+            printf("\033[12;%dm 12;%d \033[m", n, n);
+            printf("\033[13;%dm 13;%d \033[m", n, n);
+            printf("\033[14;%dm 14;%d \033[m", n, n);
+            printf("\033[15;%dm 15;%d \033[m", n, n);
+            printf("\033[16;%dm 16;%d \033[m", n, n);
+            printf("\033[17;%dm 17;%d \033[m", n, n);
+            printf("\033[18;%dm 18;%d \033[m", n, n);
+            printf("\033[19;%dm 19;%d \033[m", n, n);
+            printf("\033[20;%dm 20;%d \033[m", n, n);
+            printf("\033[21;%dm 21;%d \033[m", n, n);
+            printf("\033[22;%dm 22;%d \033[m", n, n);
+            printf("\033[23;%dm 23;%d \033[m", n, n);
+            printf("\033[24;%dm 24;%d \033[m", n, n);
+            printf("\033[25;%dm 25;%d \033[m", n, n);
+            printf("\033[25;%dm 25;%d \033[m", n, n);
+            printf("\033[26;%dm 26;%d \033[m", n, n);
+            printf("\033[27;%dm 27;%d \033[m", n, n);
+            printf("\033[28;%dm 28;%d \033[m", n, n);
+            printf("\033[29;%dm 29;%d \033[m", n, n);
+            printf("\033[30;%dm 30;%d \033[m", n, n);
+            printf("\n");
+        }
+
+        printf("\n");
+    }
+
+	system("pause");
+
+/*
+
+    system("cls");
+
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    SetConsoleTextAttribute(hConsole, BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE);
+    printf("red text\n");
+
+    SetConsoleTextAttribute(hConsole, BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE | BACKGROUND_INTENSITY );
+    printf("red text\n");
+
+    //SetConsoleTextAttribute(hConsole,FOREGROUND_RED | BACKGROUND_BLUE| BACKGROUND_INTENSITY);
+    printf("red text\n");
+
+    //SetConsoleTextAttribute(hConsole,FOREGROUND_INTENSITY|FOREGROUND_RED | BACKGROUND_BLUE| BACKGROUND_INTENSITY);
+    printf("red text\n");
+*/

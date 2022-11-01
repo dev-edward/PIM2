@@ -16,9 +16,9 @@ mono_crash.*
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
+#[Rr]elease/
 [Rr]eleases/
-x64/
+#x64/
 x86/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
@@ -69,6 +69,7 @@ StyleCopReport.xml
 *_i.c
 *_p.c
 *_h.h
+*.recipe
 *.ilk
 *.meta
 *.obj

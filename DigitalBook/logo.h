@@ -1,0 +1,2 @@
+int abertura();
+int cabecalho();

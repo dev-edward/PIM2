@@ -12,9 +12,9 @@ tb_login
 
 
 Funcionario
+-id
 -nome
 -chapa
--id
 -email
 -telefone
 -sexo

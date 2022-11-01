@@ -9,14 +9,13 @@ sUsuario* vUsuarios;
 FILE* arquivo;
 size_t fSize;
 sUsuario user;
-//sUsuario *vUsuarios;
 int i, nReg;
 
-int l_usuario(char usuario[20]) {
+int l_usuario(char usuario[21]) {
 
 	//abre o arquivo de login
-	errno_t erro_arquivo = fopen_s(&arquivo, "login.dat", "rb");
-	if (erro_arquivo) {
+	arquivo = fopen("login.dat", "rb");
+	if (arquivo == NULL) {
 		printf("Falha ao abrir arquivo de login");
 		return 0;
 	};
