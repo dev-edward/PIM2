@@ -47,10 +47,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="logo.h" />
-		<Unit filename="menus.c">
+		<Unit filename="perfil.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="menus.h" />
+		<Unit filename="perfil.h" />
+		<Unit filename="perfilGerente.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="perfilGerente.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
