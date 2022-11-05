@@ -4,7 +4,7 @@
 #include <conio.h>
 #include "login.h"
 #include "criarUsuario.h"
-#include "menus.h"
+#include "perfil.h"
 #include "logo.h"
 
 int main() {
@@ -15,6 +15,7 @@ int main() {
 	int codperfil;
     char caractere;
     int i;
+    int j;
 
     abertura();
 
@@ -30,11 +31,33 @@ int main() {
             while (i<16) {
                 if (kbhit) {
                     caractere = getch();
-                    printf("*");
+
+                    system("cls");
+                    cabecalho();
+                    printf("Faça login para acessar o sistema.\n");
+                    printf("Usuário: %s\n", usuario);
+                    printf("Senha: ");
+
+                    if ((int)caractere == 8) {
+                        i--;
+                    }
+
+                    j=0;
+                    while ( j <= i )
+                    {
+                        printf( "%c" , '*' ) ;
+                        j++;
+                    }
+                    /* PAREI AQUI! */
+                    if ((int)caractere == 8) {
+                        continue;
+                    }
+
                     if ((int)caractere == 13) {
                         senha[i]=NULL;
                         break; //sai do loop quando o usuário aperta a tecla enter
                     }
+
                     senha[i]=caractere;
                     i++;
                 }
@@ -62,6 +85,7 @@ int main() {
             printf("\033[0m");
         }
     }
+
 	//system("pause");
 	menu(codperfil);
 
