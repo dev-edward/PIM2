@@ -30,32 +30,42 @@
 
 1666573859 e:\#pro\estudo\unip\semestre 2\pim2\mudança de estrutura\codeblocks\criarusuario.h
 
-1666573899 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.c
+1669407005 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<conio.h>
 
-1666837491 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.c
+1669374284 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.c
 	<stdio.h>
 	<string.h>
+	<conio.h>
+	"logo.h"
 
-1667625701 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.c
+1669407257 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
 	<conio.h>
 	"login.h"
 	"criarUsuario.h"
-	"perfil.h"
 	"logo.h"
+	"menus.h"
 
-1666573883 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.h
+1668567169 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.h
 
-1666573859 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.h
+1669204786 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.h
 
-1667098082 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.c
+1669204728 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<locale.h>
+	<string.h>
+	"logo.h"
+	"digitalbook.h"
 
-1666836313 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.h
+1667626192 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.h
 
 1667136709 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\abertura.h
 
@@ -66,23 +76,26 @@
 
 1667266737 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\logo.h
 
-1667627491 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\logo.c
+1669407608 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\logo.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
 
-1667626561 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\perfil.c
+1668491331 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\perfil.c
 	<locale.h>
-	"perfilGerente.h"
+	"menus.h"
 
-1667627304 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\perfilgerente.c
+1667688901 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\perfilgerente.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<locale.h>
 	"logo.h"
+	"digitalbook.h"
 
 1666836313 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\perfil.h
 
 1667626192 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\perfilgerente.h
+
+1667688744 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.h
 
