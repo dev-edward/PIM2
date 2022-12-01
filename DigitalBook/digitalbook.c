@@ -6,6 +6,9 @@
 #include "criarUsuario.h"
 #include "logo.h"
 #include "menus.h"
+#include "mensagens.h"
+
+#define tabs "\t\t\t\t\t"
 
 typedef struct {
 	int codusuario, perfil, ativo;
@@ -16,7 +19,7 @@ char perfil[5][20];
 int opcaoSelecionada;
 int programaAberto=1,logado; //usados como boleano
 UsuarioLogado Usuario;
-char tabs[]="\t\t\t\t\t";
+//char tabs[]="\t\t\t\t\t";
 char temp[100];
 
 void boasvindas(){
@@ -51,14 +54,25 @@ system ("notepad teste.txt"); // Abrir arquivo txt no bloco de notas
     int teste = ultimoCodUsuario();
     printf("%d\n",teste);
 */
-
+/* codigos de escape
+//https://www.climagic.org/mirrors/VT100_Escape_Codes.html - consultar
+    system("cls");
+    printf("Teste linha 1\n");
+    printf("Teste linha 2\n");
+    printf("Teste linha 3\n");
+    printf("Teste lin");
+    getch();
+    printf("\033[2;0H");
+    getch();
+    printf("\033[2K");
+    getch();
+    printf("xxx");
+*/
     getch();
     while (programaAberto){
         abertura();
         cabecalho();
-        printf("\033[0;36m");
-        printf("%sInsira seu usuário\n",tabs);//Adicionar "Ou tecle ESC para sair do programa\n"
-        printf("\033[0m");
+
         if(login(&Usuario)){
             logado = 1;
         }

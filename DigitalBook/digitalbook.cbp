@@ -48,6 +48,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="logo.h" />
+		<Unit filename="mensagens.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mensagens.h" />
 		<Unit filename="menus.c">
 			<Option compilerVar="CC" />
 		</Unit>

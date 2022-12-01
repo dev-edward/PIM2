@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <windows.h>
 
+#define tabs "\t\t\t\t\t"
+
 char notebook[24][150];
 char banner[24][150];
 
@@ -115,7 +117,7 @@ int abertura(){
     if((int)getch()==27)exit(0);
 }
 int cabecalho(){
-    char tabs[]="\t\t\t\t\t";
+    //char tabs[]="\t\t\t\t\t";
     system("cls");/*
     printf("\033[m\033[30;100m \033[m\033[1;104m   ___  _      _ _        _  \033[m\033[30;104m  ___           _     \033[m\033[30;100m \033[m\n");
     printf("\033[m\033[30;100m \033[m\033[1;104m  |   \\(_)__ _(_) |_ __ _| | \033[m\033[30;104m | _ ) ___  ___| |__  \033[m\033[30;100m \033[m\n");
@@ -130,17 +132,5 @@ int cabecalho(){
     printf("%s\033[m\033[30;100m \033[m\033[1;104m  |___/|_\\__, |_|\\__\\__,_|_|  |___/\\___/\\___/_\\_\\  \033[m\033[30;100m \033[m\n",tabs);
     printf("%s\033[m\033[30;100m \033[m\033[1;104m         |___/                                     \033[m\033[30;100m \033[m\n",tabs);
 }
-void titulo(char *_texto){
-    char tabs[]="\t\t\t\t\t";
-    char espacos[]="                              ";
-    char umEspaco="";
-    int metadeEspaco = (51-strlen(_texto))/2;
-    if(strlen(_texto)%2==0){
-        umEspaco=' ';
-    }
-    espacos[metadeEspaco] = '\0';
-    printf("\033[4;36m");
-    printf("%s|%s%s%s%c|\n",tabs,espacos,_texto,espacos,umEspaco);
-    printf("\033[0m");
-}
+
 

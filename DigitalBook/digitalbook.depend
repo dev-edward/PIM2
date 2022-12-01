@@ -99,3 +99,55 @@
 
 1667688744 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.h
 
+1669905908 source:c:\users\rita\documents\pim2\digitalbook\criarusuario.c
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	"logo.h"
+
+1669859300 c:\users\rita\documents\pim2\digitalbook\logo.h
+
+1669908659 source:c:\users\rita\documents\pim2\digitalbook\login.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"logo.h"
+
+1669905917 source:c:\users\rita\documents\pim2\digitalbook\logo.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+
+1669859300 source:c:\users\rita\documents\pim2\digitalbook\menus.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<locale.h>
+	<string.h>
+	"logo.h"
+	"digitalbook.h"
+
+1669859300 c:\users\rita\documents\pim2\digitalbook\digitalbook.h
+
+1669908665 source:c:\users\rita\documents\pim2\digitalbook\digitalbook.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<conio.h>
+	"login.h"
+	"criarUsuario.h"
+	"logo.h"
+	"menus.h"
+	"mensagens.h"
+
+1669859300 c:\users\rita\documents\pim2\digitalbook\login.h
+
+1669859300 c:\users\rita\documents\pim2\digitalbook\criarusuario.h
+
+1669859300 c:\users\rita\documents\pim2\digitalbook\menus.h
+
+1669866141 c:\users\rita\documents\pim2\digitalbook\mensagens.h
+
+1669905926 source:c:\users\rita\documents\pim2\digitalbook\mensagens.c
+

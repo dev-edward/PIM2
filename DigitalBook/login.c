@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
+#include "logo.h"
+#define tabs "\t\t\t\t\t"
+
 typedef struct {
 	int codusuario, perfil, ativo;
 	char usuario[21], senha[16];
@@ -14,7 +17,7 @@ int i, nReg;
 
 
 int verificarUsuario(char usuario[21]) {
-    char tabs[]="\t\t\t\t\t";
+    //char tabs[]="\t\t\t\t\t";
 
 	//abre o arquivo de login
 	arquivo = fopen("login.dat", "rb");
@@ -61,7 +64,7 @@ int compararSenha(char senha[16]) {
 	return 0;
 }
 int login(sUsuario *usuarioLogado){
-    char tabs[]="\t\t\t\t\t";
+    //char tabs[]="\t\t\t\t\t";
     int qtdAsteriscos;
     char campoUsuario[21];
     char campoSenha[16];
@@ -69,10 +72,15 @@ int login(sUsuario *usuarioLogado){
     char caractere;
 
     while(1) {
+        titulo("Login");
+        printf("\033[0;36m");
+        printf("%sInsira seu usuário\n",tabs);//Adicionar "Ou tecle ESC para sair do programa\n"
+        printf("\033[0m");
         printf("%sUsuário: ",tabs);
         scanf("%s", campoUsuario);
         if ((verificarUsuario(campoUsuario)) != 0 ) {
-            cabecalho();
+            //cabecalho();
+            printf("\033[7;0H");
             printf("\033[0;36m");
             printf("%sDigite sua senha.\n",tabs);
             printf("\033[0m");
@@ -83,16 +91,21 @@ int login(sUsuario *usuarioLogado){
             while (qtdAsteriscos<16) {
                 if (kbhit) {
                     caractere = getch();
-                    if ((int)caractere == 8) {
-                        qtdAsteriscos--;
-                    }else if ((int)caractere == 13) {
+                    if ((int)caractere == 8) {//quando apertado backspace apaga o ultimo asterisco
+                        if(qtdAsteriscos>0){
+                            printf("\b");
+                            printf("\033[K");
+                            qtdAsteriscos--;
+                        }
+                    }else if ((int)caractere == 13) {//sai do loop quando o usuário aperta a tecla enter
                         campoSenha[qtdAsteriscos]=NULL;
-                        break; //sai do loop quando o usuário aperta a tecla enter
+                        break;
                     }else{
+                        printf("*");
                         campoSenha[qtdAsteriscos]=caractere;
                         qtdAsteriscos++;
                     }
-                    cabecalho();
+                    /*cabecalho();
                     printf("\033[0;36m");
                     printf("%sDigite sua senha.\n",tabs);
                     printf("\033[0m");
@@ -100,7 +113,8 @@ int login(sUsuario *usuarioLogado){
                     printf("%sSenha: ",tabs);
                     strcpy(asteriscos,"***************");
                     asteriscos[qtdAsteriscos] = '\0';
-                    printf("%s%s",tabs,asteriscos);
+                    printf("%s",asteriscos);*/
+
                 }
             }
 
@@ -113,18 +127,23 @@ int login(sUsuario *usuarioLogado){
                 break;
             }
             else {
-                cabecalho();
+                //cabecalho();
+                printf("\033[7;0H");//Volta o cursor na linha 6 onde termina o cabecalho
                 printf("\033[0;31m");
                 printf("%sSenha incorreta! Tente novamente\n",tabs);
                 printf("\033[0m");
+                printf("\033[J");//Limpa o conteudo abaixo da linha atual
+
             }
         }
         else
         {
-            cabecalho();
+            //cabecalho();
+            printf("\033[7;0H");//Volta o cursor na linha 6 onde termina o cabecalho
             printf("\033[0;31m");
             printf("%sUsuário \"%s\" não existe! Entre com um usário válido.\n",tabs, campoUsuario);
             printf("\033[0m");
+            printf("\033[J");//Limpa o conteudo abaixo da linha atual
         }
     }
     return 0;

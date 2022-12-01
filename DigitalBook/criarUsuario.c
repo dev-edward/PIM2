@@ -3,6 +3,8 @@
 #include <conio.h>
 #include "logo.h"
 
+#define tabs "\t\t\t\t\t"
+
 typedef struct {
 	int codusuario, perfil, ativo;
 	char codinome[21], senha[16];
