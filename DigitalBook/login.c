@@ -80,7 +80,7 @@ int login(sUsuario *usuarioLogado){
         scanf("%s", campoUsuario);
         if ((verificarUsuario(campoUsuario)) != 0 ) {
             //cabecalho();
-            printf("\033[7;0H");
+            printf("\033[8;0H");
             printf("\033[0;36m");
             printf("%sDigite sua senha.\n",tabs);
             printf("\033[0m");
@@ -128,7 +128,7 @@ int login(sUsuario *usuarioLogado){
             }
             else {
                 //cabecalho();
-                printf("\033[7;0H");//Volta o cursor na linha 6 onde termina o cabecalho
+                printf("\033[8;0H");//Volta o cursor na linha 6 onde termina o cabecalho
                 printf("\033[0;31m");
                 printf("%sSenha incorreta! Tente novamente\n",tabs);
                 printf("\033[0m");
@@ -139,7 +139,7 @@ int login(sUsuario *usuarioLogado){
         else
         {
             //cabecalho();
-            printf("\033[7;0H");//Volta o cursor na linha 6 onde termina o cabecalho
+            printf("\033[8;0H");//Volta o cursor na linha 6 onde termina o cabecalho
             printf("\033[0;31m");
             printf("%sUsuário \"%s\" não existe! Entre com um usário válido.\n",tabs, campoUsuario);
             printf("\033[0m");
