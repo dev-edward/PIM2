@@ -2,33 +2,38 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <conio.h>
-#include "login.h"
-#include "criarUsuario.h"
 #include "logo.h"
+#include "login.h"
 #include "menus.h"
 #include "mensagens.h"
+#include "criarUsuario.h"
+#include "consultarUsuarios.h"
 
-#define tabs "\t\t\t\t\t"
+#define tabs "\t\t\t\t     "
+#define tamanhoUsuario 16
+#define tamanhoSenha 13
+
 
 typedef struct {
-	int codusuario, perfil, ativo;
-	char usuario[21], senha[16];
+	int codusuario;
+	char usuario[tamanhoUsuario], senha[tamanhoSenha];
+	int perfil, ativo;
 }UsuarioLogado;
 
 char perfil[5][20];
 int opcaoSelecionada;
 int programaAberto=1,logado; //usados como boleano
 UsuarioLogado Usuario;
-//char tabs[]="\t\t\t\t\t";
-char temp[100];
 
 void boasvindas(){
+    char espacos[]="                                                 ";
+    int metadeEspaco = (48-strlen(Usuario.usuario))/2;
+    espacos[metadeEspaco] = '\0';
+    printf("\033[9;0H\033[K\033[J");
     printf("\033[0;32m");
-    printf("%sBem-vindo(a) %s, seu perfil é: %s\n", Usuario.usuario,perfil[Usuario.perfil-1]);
+    printf("%s%sBem-vindo(a) %s\n",tabs,espacos,Usuario.usuario);
     printf("\033[0m");
 }
-
-
 
 int main() {
 	setlocale(LC_ALL, "Portuguese"); //Permite acentuação em português
@@ -68,30 +73,34 @@ system ("notepad teste.txt"); // Abrir arquivo txt no bloco de notas
     getch();
     printf("xxx");
 */
+/*
+//135 colunas visíveis
+for(int i=0;i<14;i++){
+    printf("123456789 ");
+}
+*/
     getch();
     while (programaAberto){
         abertura();
         cabecalho();
 
         if(login(&Usuario)){
+            char contatenacao[25];
             logado = 1;
+            strcat(strcpy(contatenacao, "Menu "),perfil[Usuario.perfil-1]);
+            titulo(contatenacao);
         }
-
         //system("pause");
-        switch(Usuario.perfil){
-            case 1: // perfil Administrador
-                while(logado){
+
+        while(logado){
+            boasvindas();
+            printf("%s* Use as setas do teclado para selecionar uma opção\n%s* Tecle enter para escolher a opção selecionada.\n%s* Ou tecle o número da opção desejada\n\n",tabs,tabs,tabs);
+            switch(Usuario.perfil){
+                case 1:
                     opcaoSelecionada=menuAdministrador();
                     switch(opcaoSelecionada){
-                        case 1:
-                            //criarUsuario();
-                            printf("%sDigite o nome de usuário: edward",tabs);
-                            printf("%sDigite uma senha: ********",tabs);
-                            printf("%sConfirme a senha: *******",tabs);
-                            printf("%sDefina o perfil: administrador",tabs);
-                            printf("%sUsuario ativo: sim",tabs);
-                            printf("%sConfirma o cadastro (s/n): s",tabs);
-                            system("pause");
+                        case 1: // perfil Administrador
+                            criarUsuario();
                             break;
                         case 2:
                             system("cls");
@@ -106,7 +115,217 @@ system ("notepad teste.txt"); // Abrir arquivo txt no bloco de notas
                             break;
                         case 4:
                             system("cls");
-                            printf("Alterar Senha de Usu rios [CriarFunção]");
+                            printf("Alterar Senha de Usuários [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 5:
+                            system("cls");
+                            printf("Alterar Minha Senha [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 6: // Sair
+                            logado = 0;
+                            break;
+                        default:
+                            system("cls");
+                            printf("opção não encontrada\n");
+                            system("pause");
+                            break;
+                    }
+                break;
+                case 2: // perfil Gerente
+                    opcaoSelecionada=menuGerente();
+                    switch(opcaoSelecionada){
+                        case 1:
+                            system("cls");
+                            printf("Relatório de contrato [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 2:
+                            system("cls");
+                            printf("Total de funcionários [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 3:
+                            system("cls");
+                            printf("Despesas do mês atual [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 4:
+                            system("cls");
+                            printf("Receita no mês atual [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 5:
+                            system("cls");
+                            printf("Lucro no mês atual [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 6:
+                            system("cls");
+                            printf("Trocar de Senha [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 7: // Sair
+                            logado = 0;
+                            break;
+                        default:
+                            system("cls");
+                            printf("opção não encontrada\n");
+                            system("pause");
+                            break;
+                    }
+                break;
+                case 3: // Perfil RH
+                    opcaoSelecionada=menuRH();
+                    switch(opcaoSelecionada){
+                        case 1:
+                            system("cls");
+                            printf("Cadastrar Funcionário [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 2:
+                            system("cls");
+                            printf("Consultar Funcionários [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 3:
+                            system("cls");
+                            printf("Agendar Entrevista [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 4:
+                            system("cls");
+                            printf("Listar Entrevistas [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 5:
+                            system("cls");
+                            printf("Trocar de Senha [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 6: //Sair
+                            logado = 0;
+                            break;
+                        default:
+                            system("cls");
+                            printf("opção não encontrada\n");
+                            system("pause");
+                            break;
+                    }
+                break;
+                case 4: // Perfil Financeiro
+                    opcaoSelecionada=menuFinanceiro();
+                    switch(opcaoSelecionada){
+                        case 1:
+                            system("cls");
+                            printf("Cadastrar Despesa [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 2:
+                            system("cls");
+                            printf("Cadastrar Receita [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 3:
+                            system("cls");
+                            printf("Listar Despesas [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 4:
+                            system("cls");
+                            printf("Listar Receitas [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 5:
+                            system("cls");
+                            printf("Trocar de Senha [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 6: //Sair
+                            logado = 0;
+                            break;
+                        default:
+                            system("cls");
+                            printf("opção não encontrada\n");
+                            system("pause");
+                            break;
+                    }
+                break;
+                case 5: // Perfil Recepção
+                    opcaoSelecionada=menuRecepcao();
+                    switch(opcaoSelecionada){
+                        case 1:
+                            system("cls");
+                            printf("Cadastrar Contato [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 2:
+                            system("cls");
+                            printf("Listar Contatos [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 3:
+                            system("cls");
+                            printf("Registrar Atendimento Externo [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 4:
+                            system("cls");
+                            printf("Listar Atendimentos Externos [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 5:
+                            system("cls");
+                            printf("Trocar de Senha [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 6: //Sair
+                            logado = 0;
+                            break;
+                        default:
+                            system("cls");
+                            printf("opção não encontrada\n");
+                            system("pause");
+                            break;
+                    }
+                break;
+                default:
+                    printf("Pefil não reconhecido");
+                    getch();
+                break;
+            }
+
+        }
+
+
+        /***
+        switch(Usuario.perfil){
+            case 1: // perfil Administrador
+                //titulo("Menu administrador");
+                boasvindas();
+                while(logado){
+                    printf("%s* Use as setas do teclado para selecionar uma opção\n%s* Tecle enter para escolher a opção selecionada.\n%s* Ou tecle o número da opção desejada\n\n",tabs,tabs,tabs);
+                    opcaoSelecionada=menuAdministrador();
+                    switch(opcaoSelecionada){
+                        case 1:
+                            criarUsuario();
+
+                            break;
+                        case 2:
+                            system("cls");
+                            //printf("Consultar Usuários [CriarFunção]");
+                            printf("");
+                            system("pause");
+                            break;
+                        case 3:
+                            system("cls");
+                            printf("Alterar Perfil de Usuários [CriarFunção]");
+                            system("pause");
+                            break;
+                        case 4:
+                            system("cls");
+                            printf("Alterar Senha de Usuários [CriarFunção]");
                             system("pause");
                             break;
                         case 5:
@@ -126,6 +345,7 @@ system ("notepad teste.txt"); // Abrir arquivo txt no bloco de notas
                 }
             break;
             case 2: // perfil Gerente
+                //titulo("Menu gerente");
                 while(logado){
                     opcaoSelecionada=menuGerente();
                     switch(opcaoSelecionada){
@@ -171,6 +391,7 @@ system ("notepad teste.txt"); // Abrir arquivo txt no bloco de notas
                 }
             break;
             case 3: // Perfil RH
+                //titulo("Menu RH");
                 while(logado){
                     opcaoSelecionada=menuRH();
                     switch(opcaoSelecionada){
@@ -211,6 +432,7 @@ system ("notepad teste.txt"); // Abrir arquivo txt no bloco de notas
                 }
             break;
             case 4: // Perfil Financeiro
+                //titulo("Menu financeiro");
                 while(logado){
                     opcaoSelecionada=menuFinanceiro();
                     switch(opcaoSelecionada){
@@ -251,6 +473,7 @@ system ("notepad teste.txt"); // Abrir arquivo txt no bloco de notas
                 }
             break;
             case 5: // Perfil Recepção
+                //titulo("Menu recepção");
                 while(logado){
                     opcaoSelecionada=menuRecepcao();
                     switch(opcaoSelecionada){
@@ -290,18 +513,13 @@ system ("notepad teste.txt"); // Abrir arquivo txt no bloco de notas
                     }
                 }
             break;
+            default:
+            printf("Pefil não reconhecido");
+            getch();
+            break;
         }
-
+        ****/
 
     }
-
-        /*  Criaçao de usuário de teste
-        criarUsuario("edward","senha1",1);
-        criarUsuario("debora","senha2",2);
-        criarUsuario("carol","senha3",3);
-        criarUsuario("caio","senha4",4);
-        criarUsuario("washington","senha5",5);
-        criarUsuario("sara","senha6",6);
-        */
 	return 0;
 }

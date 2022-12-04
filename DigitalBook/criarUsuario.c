@@ -3,64 +3,269 @@
 #include <conio.h>
 #include "logo.h"
 
-#define tabs "\t\t\t\t\t"
+#define tabs "\t\t\t\t     "
+#define tamanhoUsuario 16
+#define tamanhoSenha 13
+
+char _usuario[tamanhoUsuario];
+char _senha[tamanhoSenha],_senhaConfimacao[tamanhoSenha];
+int _perfil,_ativo,caracteresNoCampo;
+char caractere;
+char contatenacao[60];
+char perfil[5][20];
+
 
 typedef struct {
-	int codusuario, perfil, ativo;
-	char codinome[21], senha[16];
+	int codusuario;
+	char codinome[tamanhoUsuario], senha[tamanhoSenha];
+	int perfil, ativo;
 }cadastroUsuario;
 
 FILE* arquivoUsuarios;
 
-/*  Criaçao de usuário de teste
-    criarUsuario("edward","senha1",1);
-    criarUsuario("debora","senha2",2);
-    criarUsuario("carol","senha3",3);
-    criarUsuario("caio","senha4",4);
-    criarUsuario("washington","senha5",5);
-    criarUsuario("sara","senha6",6);
-*/
-
-
-void criarUsuario(){
-    int tamanhoUsuario = 8,tamanhoSenha=16;
-    char _usuario[tamanhoUsuario];
-    char _senha[16];
-    int _perfil,_ativo,incremento,cancelarCadastro=0;
-    char caracterePressionado;
-    char espacos[]="                 ";
-
-    cabecalho();
-    titulo("Cadastro de usuário.");
-    titulo("teste titulo.");
-     titulo("Cadastro de usuário12.");
-    titulo("titulo.");
-    titulo("teste titulo de usuário102.");
-    getch();
-    printf("Novo usuário: ");
-    fflush(stdin);
-    fgets(_usuario,tamanhoUsuario,stdin);
-/*
-    // Receber usuario sem ultrapassar o limite de caracteres
-    incremento=0;
-    while (incremento<tamanhoUsuario) {
+int solicitarUsuario(){
+    mensagemAzul("Defina um codinome(máx. 15 caracteres)");
+    limparAbaixo();
+    printf("%sNovo usuário: ",tabs);
+    //Recebe o codinome
+    caracteresNoCampo=0;
+    while (1) {
         if (kbhit) {
-            caracterePressionado = getche();
-            if ((int)caracterePressionado==13) { // Terminou de escrever o campo
-                _usuario[incremento]=NULL;
-                printf("\nPressionou Enter\n");
+            caractere = getch();
+            if ((int)caractere == 8) {// Quando pressionado a tecla backspace apaga o ultimo caractere
+                if(caracteresNoCampo>0){
+                    printf("\b");
+                    printf("\033[K");
+                    caracteresNoCampo--;
+                }
+            }else if ((int)caractere == 13) {// Sai do loop quando o usuário aperta a tecla enter
+                _usuario[caracteresNoCampo]=NULL;
                 break;
-            }else if ((int)caracterePressionado==27) { // Cancela o cadastro
-                cancelarCadastro=1;
-                printf("\nPressionou Esc.\n");
+            }else if ((int)caractere == 27) {// Quando apertado a tecla ESC
+
+                return -1;
                 break;
-            }else{
-                _usuario[incremento] = caracterePressionado;
-                incremento++;
+            }else if(caracteresNoCampo<tamanhoUsuario-1){
+                printf("%c",caractere);
+                _usuario[caracteresNoCampo]=caractere;
+                caracteresNoCampo++;
             }
         }
     }
+    if((verificarUsuario(_usuario)) != 0) return 1;
+    return 0;
+}
+int solicitarSenha(){
+    mensagemAzul("Digite uma senha(máx. 12 caracteres)");
+    limparAbaixo();
+    printf("%sNovo usuário: ",tabs);
+    printf("%s\n",_usuario);
+    printf("%sSenha: ", tabs);
+    // Recebe a senha
+    caracteresNoCampo=0;
+    while (1) {
+        if (kbhit) {
+            caractere = getch();
+            if ((int)caractere == 8) {//quando apertado backspace apaga o ultimo asterisco
+                if(caracteresNoCampo>0){
+                    printf("\b");
+                    printf("\033[K");
+                    caracteresNoCampo--;
+                }
+            }else if ((int)caractere == 13) {//sai do loop quando o usuário aperta a tecla enter
+                _senha[caracteresNoCampo]=NULL;
+                break;
+            }else if ((int)caractere == 27) {// Quando apertado a tecla ESC
+                return -1;
+                break;
+            }else if(caracteresNoCampo<tamanhoSenha-1){
+                printf("*");
+                _senha[caracteresNoCampo]=caractere;
+                caracteresNoCampo++;
+            }
+        }
+    }
+    printf("\n%sConfirme a senha: ", tabs);
+    // Recebe a confirmação da senha
+    caracteresNoCampo=0;
+    while (1) {
+        if (kbhit) {
+            caractere = getch();
+            if ((int)caractere == 8) {//quando apertado backspace apaga o ultimo asterisco
+                if(caracteresNoCampo>0){
+                    printf("\b");
+                    printf("\033[K");
+                    caracteresNoCampo--;
+                }
+            }else if ((int)caractere == 13) {//sai do loop quando o usuário aperta a tecla enter
+                _senhaConfimacao[caracteresNoCampo]=NULL;
+                break;
+            }else if ((int)caractere == 27) {// Quando apertado a tecla ESC
+                return -1;
+                break;
+            }else if(caracteresNoCampo<tamanhoSenha-1){
+                printf("*");
+                _senhaConfimacao[caracteresNoCampo]=caractere;
+                caracteresNoCampo++;
+            }
+        }
+    }
+    if (strcmp(_senha,_senhaConfimacao)!=0) {
+        return 1; // Senha não coincidem
+    }
+    return 0;
+}
+int escolherPerfil(){
+    int qtdSenha;
+    int indicePerfil;
+    char tecla;
+    strcpy(perfil[0],"Administrador");
+    strcpy(perfil[1],"Gerente");
+    strcpy(perfil[2],"Recursos Humanos");
+    strcpy(perfil[3],"Financeiro");
+    strcpy(perfil[4],"Recepção");
+    mensagemAzul("Escolha um perfil para o usuário com as setas");
+    limparAbaixo();
+    printf("%sNovo usuário: ",tabs);
+    printf("%s\n",_usuario);
+    printf("%sSenha: ", tabs);
+    qtdSenha=strlen(_senha);
+    for(int i=0;i<qtdSenha;i++){
+        printf("*");
+    }
+    printf("\n%sConfirme a senha: ", tabs);
+    for(int i=0;i<qtdSenha;i++){
+        printf("*");
+    }
+    printf("\n%sPerfil: ",tabs);
+    indicePerfil = 0;
+    printf("%s",perfil[indicePerfil]);
+    tecla=NULL;
+    while((int)tecla!=13){
+        if (kbhit) {
+            tecla = getch();
+            if(((int)tecla==80) || ((int)tecla==72)){
+                for(int i=0;i<strlen(perfil[indicePerfil]);i++){
+                    printf("\b");
+                }
+                printf("\033[K");
+
+                if((int)tecla==80)indicePerfil++;
+                if((int)tecla==72)indicePerfil--;
+
+                if(indicePerfil>4)indicePerfil=0; // Quando o índice do perfil ultrapassa o total volta para a posição inicial
+                if(indicePerfil<0)indicePerfil=4; // Quando o índice do perfil é menor, passa a ser o último
+
+                printf("%s",perfil[indicePerfil]);
+            }else if((int)tecla==27)return -1;
+        }
+    }
+
+    return indicePerfil+1; // Adiciona 1 ao indice pois nos arquivos o indice começa com 1
+}
+int estaAtivo(){
+    int qtdSenha;
+    char tecla;
+    int ativo;
+    mensagemAzul("Defina se o usuário está ativo com as setas");
+    limparAbaixo();
+    printf("%sNovo usuário: ",tabs);
+    printf("%s\n",_usuario);
+    printf("%sSenha: ", tabs);
+    qtdSenha=strlen(_senha);
+    for(int i=0;i<qtdSenha;i++){
+        printf("*");
+    }
+    printf("\n%sConfirme a senha: ", tabs);
+    for(int i=0;i<qtdSenha;i++){
+        printf("*");
+    }
+    printf("\n%sPerfil: ",tabs);
+    printf("%s\n",perfil[_perfil-1]);
+    printf("%sAtivo? ",tabs);
+    ativo=1;
+    printf("Sim");
+    tecla=NULL;
+    while((int)tecla!=13){
+        if (kbhit) {
+            tecla = getch();
+            if(((int)tecla==80) || ((int)tecla==72)){
+                printf("\b\b\b\033[K");
+                if((int)tecla==80)ativo++;
+                if((int)tecla==72)ativo--;
+                if(ativo>1)ativo=0;
+                if(ativo<0)ativo=1;
+                ativo?printf("Sim"):printf("Não");
+            }else if((int)tecla==27)return -1;
+        }
+    }
+}
+void cadastroCancelado(){
+    avisoVermelho("Cadastro cancelado, voltando para o menu");
+    Sleep(1500);
+    avisoVermelho(" ");
+    limparAbaixo();
+}
+
+
+/*  Criaçao de usuário de teste
+    salvarUsuario("edward", "senha1", 1, 1);
+    salvarUsuario("debora", "senha2", 2, 1);
+    salvarUsuario("carol", "senha3", 3, 1);
+    salvarUsuario("caio", "senha4", 4, 1);
+    salvarUsuario("washington", "senha5", 5, 1);
+    salvarUsuario("sara", "senha6", 6, 1);
 */
+int criarUsuario(){
+
+    titulo("Cadastro de usuário.");
+    avisoVermelho(" ");
+
+    // Validando usuário;
+    while(1){
+        int usuarioInvalido = solicitarUsuario();
+        if(usuarioInvalido==1){
+            strcat(strcat(strcpy(contatenacao, "\""),_usuario),"\" já está em uso, escolha outro nome de usuário");
+            avisoVermelho(contatenacao);
+        }else if(usuarioInvalido==0){
+            avisoVermelho(" ");
+            break;
+        }else if(usuarioInvalido==-1){
+            cadastroCancelado();
+            return -1;
+        }
+    }
+    while(1){
+        int senhaInvalida = solicitarSenha();
+        if(senhaInvalida==1){
+            avisoVermelho("As senhas não coincidem, tente novamente");
+        }else if(senhaInvalida==0){
+            avisoVermelho(" ");
+            break;
+        }else if(senhaInvalida==-1){
+            cadastroCancelado();
+            return -1;
+        }
+    }
+
+    _perfil = escolherPerfil();
+    if(_perfil==-1){
+        cadastroCancelado();
+        return -1;
+    }
+    _ativo = estaAtivo();
+    if(_ativo==-1){
+        cadastroCancelado();
+        return -1;
+    }
+
+
+    if(confirmacao()){
+        salvarUsuario(_usuario, _senha, _perfil, _ativo);
+    }else{
+        cadastroCancelado();
+    }
+
 
 /* Criptografando strings
     for(int i=0; mensagem[i] != '\0'; i++){
@@ -87,19 +292,9 @@ void criarUsuario(){
         mensagem[i] = x;
     }
 */
+    //salvarUsuario(_usuario, _senha, _perfil, _ativo);
 
 
-
-    printf("%s\n%c\n%c\n%c\n%c\n%c\n%c\n",_usuario,_usuario[0]+3,_usuario[1]+3,_usuario[2]+3,_usuario[3]+3,_usuario[4]+3,_usuario[5]+3);
-    system("pause");
-
-
-    if(cancelarCadastro){
-        printf("Cadastro cancelado");
-    }else{
-        printf("Cadastrado");
-        //salvarUsuario(_usuario, _senha, _perfil, _ativo);
-    }
 }
 int ultimoCodUsuario(){//retorna a quantidade de usuários cadastrados, que seria o ultimo código de usuário atribuído
 
@@ -108,7 +303,7 @@ int ultimoCodUsuario(){//retorna a quantidade de usuários cadastrados, que seria
 
     arquivoUsuarios = fopen("usuarios.dat", "ab+"); // Abre o arquivo para leitura
 	if (arquivoUsuarios == NULL) {
-		// printf("Falha ao abrir arquivo de usuários");
+		 printf("Falha ao abrir arquivo de usuários");
 		return -1; // Retorna -1 se não conseguir abrir o arquivo e então aborta a função
 	};
 	//calcula o tamanho do arquivo e a quantidade de registros
@@ -121,7 +316,7 @@ int ultimoCodUsuario(){//retorna a quantidade de usuários cadastrados, que seria
 
 	return numeroRegistros;
 }
-int salvarUsuario(char _usuario[21], char _senha[16], int _perfil, int _ativo) { // Salva o usuário no arquivo usuarios.dat
+int salvarUsuario(char _usuario[tamanhoUsuario], char _senha[tamanhoSenha], int _perfil, int _ativo) { // Salva o usuário no arquivo usuarios.dat
     int elementosGravados,codusuario;
     //FILE* gravarArquivo;
 	cadastroUsuario usuario;

@@ -1,0 +1,9 @@
+-Inicialização
+ Tamanho de inicialização:
+ Colunas: 120;
+ Linhas: 40;
+
+-Padrões>aparência
+ Tamanho da fonte: 18;
+ Espessura da fonte: médio;
+ Preenchimento: 15;

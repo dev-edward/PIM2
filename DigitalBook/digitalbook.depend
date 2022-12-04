@@ -30,33 +30,36 @@
 
 1666573859 e:\#pro\estudo\unip\semestre 2\pim2\mudança de estrutura\codeblocks\criarusuario.h
 
-1669407005 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.c
+1670114620 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
+	"logo.h"
 
-1669374284 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.c
+1670116433 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.c
 	<stdio.h>
 	<string.h>
 	<conio.h>
 	"logo.h"
 
-1669407257 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.c
+1670115481 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
 	<conio.h>
-	"login.h"
-	"criarUsuario.h"
 	"logo.h"
+	"login.h"
 	"menus.h"
+	"mensagens.h"
+	"criarUsuario.h"
+	"consultarUsuarios.h"
 
 1668567169 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.h
 
 1669204786 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.h
 
-1669204728 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.c
+1670116433 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -76,7 +79,7 @@
 
 1667266737 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\logo.h
 
-1669407608 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\logo.c
+1670116433 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\logo.c
 	<stdio.h>
 	<stdlib.h>
 	<windows.h>
@@ -150,4 +153,14 @@
 1669866141 c:\users\rita\documents\pim2\digitalbook\mensagens.h
 
 1669905926 source:c:\users\rita\documents\pim2\digitalbook\mensagens.c
+
+1670111943 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\mensagens.h
+
+1670114620 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\mensagens.c
+	<stdio.h>
+	<conio.h>
+
+1670114620 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\consultarusuarios.c
+
+1670113299 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\consultarusuarios.h
 

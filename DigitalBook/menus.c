@@ -5,6 +5,7 @@
 #include <string.h>
 #include "logo.h"
 #include "digitalbook.h"
+#define tabs "\t\t\t\t     "
 
 typedef struct opcao{
     char texto[30]; //Texto da op  o com 30 caracteres no m ximo
@@ -36,12 +37,10 @@ int j=1;
 char tecla;
 
 void listarOpcoes(Opcoes *opcoes){
-    cabecalho();
-    boasvindas();
-    printf("Use as setas do teclado para selecionar uma op  o e\ntecle enter para escolher a op  o selecionada.\nOu tecle o n mero da op  o desejada\n");
-
+    printf("\033[14;0H\033[K\033[J"); // Vai para a linha 14 limpa a linha e as linhas abaixo
     Opcao *inicio = opcoes->inicio;
     while(inicio!=NULL){
+        printf("%s",tabs);
         if(j==inicio->posicao)printf("\033[5;7m");
         printf ("%d - %s", inicio->posicao, inicio->texto);
         printf("\033[m\n");
@@ -77,6 +76,7 @@ int selecionarOpcao(Opcoes *opcoes){
 }
 
 int menuAdministrador(){
+
     Opcoes opcoesAdministrador;
     opcoesAdministrador.inicio = NULL;
     opcoesAdministrador.tamanho = 0;
