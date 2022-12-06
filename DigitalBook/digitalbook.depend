@@ -30,36 +30,38 @@
 
 1666573859 e:\#pro\estudo\unip\semestre 2\pim2\mudança de estrutura\codeblocks\criarusuario.h
 
-1670114620 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.c
+1670288414 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<conio.h>
 	"logo.h"
 
-1670116433 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.c
+1670273262 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.c
 	<stdio.h>
 	<string.h>
 	<conio.h>
 	"logo.h"
 
-1670115481 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.c
+1670357497 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\digitalbook.c
 	<stdio.h>
 	<stdlib.h>
 	<locale.h>
 	<conio.h>
+	"testes.h"
 	"logo.h"
 	"login.h"
 	"menus.h"
 	"mensagens.h"
 	"criarUsuario.h"
 	"consultarUsuarios.h"
+	"editarUsuario.h"
 
 1668567169 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\login.h
 
 1669204786 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\criarusuario.h
 
-1670116433 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.c
+1670276864 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\menus.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -154,13 +156,42 @@
 
 1669905926 source:c:\users\rita\documents\pim2\digitalbook\mensagens.c
 
-1670111943 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\mensagens.h
+1670253524 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\mensagens.h
 
-1670114620 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\mensagens.c
+1670253545 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\mensagens.c
 	<stdio.h>
 	<conio.h>
 
-1670114620 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\consultarusuarios.c
+1670253568 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\consultarusuarios.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 
 1670113299 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\consultarusuarios.h
+
+1670256854 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\alterarperfil.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"mensagens.h"
+
+1670251025 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\testes.h
+
+1670250990 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\testes.c
+
+1670257282 e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\editarusuario.h
+
+1670287185 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\editarusuario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"mensagens.h"
+
+1670352659 source:e:\#pro\estudo\unip\semestre 2\pim2\repositorio-pim\digitalbook\alterarsenha.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
 

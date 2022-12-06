@@ -12,7 +12,7 @@ char _senha[tamanhoSenha],_senhaConfimacao[tamanhoSenha];
 int _perfil,_ativo,caracteresNoCampo;
 char caractere;
 char contatenacao[60];
-char perfil[5][20];
+char perfis[5][20];
 
 
 typedef struct {
@@ -29,6 +29,7 @@ int solicitarUsuario(){
     printf("%sNovo usuário: ",tabs);
     //Recebe o codinome
     caracteresNoCampo=0;
+    caractere==NULL;
     while (1) {
         if (kbhit) {
             caractere = getch();
@@ -63,6 +64,7 @@ int solicitarSenha(){
     printf("%sSenha: ", tabs);
     // Recebe a senha
     caracteresNoCampo=0;
+    caractere==NULL;
     while (1) {
         if (kbhit) {
             caractere = getch();
@@ -88,6 +90,7 @@ int solicitarSenha(){
     printf("\n%sConfirme a senha: ", tabs);
     // Recebe a confirmação da senha
     caracteresNoCampo=0;
+    caractere==NULL;
     while (1) {
         if (kbhit) {
             caractere = getch();
@@ -119,11 +122,12 @@ int escolherPerfil(){
     int qtdSenha;
     int indicePerfil;
     char tecla;
-    strcpy(perfil[0],"Administrador");
-    strcpy(perfil[1],"Gerente");
-    strcpy(perfil[2],"Recursos Humanos");
-    strcpy(perfil[3],"Financeiro");
-    strcpy(perfil[4],"Recepção");
+    // Adiciona a lista de perfis
+    strcpy(perfis[0],"Administrador");
+    strcpy(perfis[1],"Gerente");
+    strcpy(perfis[2],"Recursos Humanos");
+    strcpy(perfis[3],"Financeiro");
+    strcpy(perfis[4],"Recepção");
     mensagemAzul("Escolha um perfil para o usuário com as setas");
     limparAbaixo();
     printf("%sNovo usuário: ",tabs);
@@ -139,13 +143,13 @@ int escolherPerfil(){
     }
     printf("\n%sPerfil: ",tabs);
     indicePerfil = 0;
-    printf("%s",perfil[indicePerfil]);
+    printf("%s",perfis[indicePerfil]);
     tecla=NULL;
     while((int)tecla!=13){
         if (kbhit) {
             tecla = getch();
             if(((int)tecla==80) || ((int)tecla==72)){
-                for(int i=0;i<strlen(perfil[indicePerfil]);i++){
+                for(int i=0;i<strlen(perfis[indicePerfil]);i++){
                     printf("\b");
                 }
                 printf("\033[K");
@@ -156,7 +160,7 @@ int escolherPerfil(){
                 if(indicePerfil>4)indicePerfil=0; // Quando o índice do perfil ultrapassa o total volta para a posição inicial
                 if(indicePerfil<0)indicePerfil=4; // Quando o índice do perfil é menor, passa a ser o último
 
-                printf("%s",perfil[indicePerfil]);
+                printf("%s",perfis[indicePerfil]);
             }else if((int)tecla==27)return -1;
         }
     }
@@ -181,7 +185,7 @@ int estaAtivo(){
         printf("*");
     }
     printf("\n%sPerfil: ",tabs);
-    printf("%s\n",perfil[_perfil-1]);
+    printf("%s\n",perfis[_perfil-1]);
     printf("%sAtivo? ",tabs);
     ativo=1;
     printf("Sim");
@@ -191,18 +195,16 @@ int estaAtivo(){
             tecla = getch();
             if(((int)tecla==80) || ((int)tecla==72)){
                 printf("\b\b\b\033[K");
-                if((int)tecla==80)ativo++;
-                if((int)tecla==72)ativo--;
-                if(ativo>1)ativo=0;
-                if(ativo<0)ativo=1;
+                ativo==1?ativo--:ativo++;
                 ativo?printf("Sim"):printf("Não");
             }else if((int)tecla==27)return -1;
         }
     }
+    return ativo;
 }
 void cadastroCancelado(){
     avisoVermelho("Cadastro cancelado, voltando para o menu");
-    Sleep(1500);
+    Sleep(1600);
     avisoVermelho(" ");
     limparAbaixo();
 }
@@ -260,8 +262,20 @@ int criarUsuario(){
     }
 
 
+    mensagemAzul("Confirme os dados do cadastro");
+    printf("\033[15;0H%s",tabs);// Reposiciona o cursor
     if(confirmacao()){
-        salvarUsuario(_usuario, _senha, _perfil, _ativo);
+        if(salvarUsuario(_usuario, _senha, _perfil, _ativo)==0){
+            avisoVerde("Cadastrado com sucesso! Voltando ao menu");
+            Sleep(1600);
+            avisoVerde(" ");
+            limparAbaixo();
+        }else{
+            avisoVermelho("Ops algo deu errado, voltando ao menu");
+            Sleep(1600);
+            avisoVermelho(" ");
+            limparAbaixo();
+        }
     }else{
         cadastroCancelado();
     }
@@ -341,12 +355,11 @@ int salvarUsuario(char _usuario[tamanhoUsuario], char _senha[tamanhoSenha], int 
         */
 
         fflush(stdin); // Limpa o buffer do teclado
-        elementosGravados = fwrite(&usuario, sizeof(cadastroUsuario), 1, arquivoUsuarios); // Grava arquivo em binario
+        elementosGravados = fwrite(&usuario, sizeof(cadastroUsuario), 1, arquivoUsuarios); // Grava arquivo em binario.
+        fclose(arquivoUsuarios); // Fecha o arquivo aberto
         if (elementosGravados==1){ // Se a quantidade de elementos gravados for 1 significa que conseguiu armazenar o usuário no arquivo
-            fclose(arquivoUsuarios); // Fecha o arquivo aberto
             return 0; // Retorna 0 pois o usuário foi cadastrado
         }else{
-            fclose(arquivoUsuarios); // Fecha o arquivo aberto
             return -2; // Se a variável elementosGravados for diferente de 1 algo deu errado
         }
 

@@ -84,8 +84,9 @@ int menuAdministrador(){
 
     inserirOpcao(&opcoesAdministrador,"Criar Usuário");
     inserirOpcao(&opcoesAdministrador,"Consultar Usuários");
-    inserirOpcao(&opcoesAdministrador,"Alterar Perfil de Usuários");
-    inserirOpcao(&opcoesAdministrador,"Alterar Senha de Usuários");
+    inserirOpcao(&opcoesAdministrador,"Editar Usuário");
+    inserirOpcao(&opcoesAdministrador,"Alterar Senha de Usuário");
+    inserirOpcao(&opcoesAdministrador,"Realizar Backup");
     inserirOpcao(&opcoesAdministrador,"Alterar Minha Senha");
     inserirOpcao(&opcoesAdministrador,"Sair");
 

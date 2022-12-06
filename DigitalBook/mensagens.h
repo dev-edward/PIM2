@@ -3,3 +3,5 @@ void mensagemAzul(char *_texto);
 void avisoVermelho(char *_texto);
 void limparAbaixo();
 int confirmacao();
+void centralizar();
+int voltar();

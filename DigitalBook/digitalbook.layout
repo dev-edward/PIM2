@@ -2,50 +2,56 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="menus.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="661" zoom_1="0" zoom_2="4">
+	<File name="alterarSenha.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1496" topLine="30" />
+			<Cursor1 position="30" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="logo.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="consultarUsuarios.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="9348" topLine="107" />
+			<Cursor1 position="2548" topLine="11" />
 		</Cursor>
 	</File>
-	<File name="mensagens.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="alterarSenha.c" open="1" top="1" tabpos="11" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1234" topLine="14" />
+			<Cursor1 position="4701" topLine="136" />
 		</Cursor>
 	</File>
-	<File name="digitalbook.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="digitalbook.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2511" topLine="58" />
+			<Cursor1 position="3660" topLine="89" />
 		</Cursor>
 		<Folding>
-			<Collapse line="28" />
-			<Collapse line="47" />
-			<Collapse line="56" />
-			<Collapse line="59" />
+			<Collapse line="31" />
+			<Collapse line="151" />
+			<Collapse line="189" />
+			<Collapse line="227" />
+			<Collapse line="272" />
 		</Folding>
 	</File>
-	<File name="logo.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="editarUsuario.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="33" topLine="0" />
+			<Cursor1 position="17" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="mensagens.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="testes.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="117" topLine="0" />
+			<Cursor1 position="13" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="criarUsuario.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="mensagens.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="12" topLine="0" />
+			<Cursor1 position="751" topLine="95" />
 		</Cursor>
 	</File>
-	<File name="menus.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="menus.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="661" zoom_1="5" zoom_2="4">
 		<Cursor>
-			<Cursor1 position="20" topLine="0" />
+			<Cursor1 position="2440" topLine="96" />
+		</Cursor>
+	</File>
+	<File name="editarUsuario.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3394" topLine="110" />
 		</Cursor>
 	</File>
 	<File name="login.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
@@ -53,14 +59,9 @@
 			<Cursor1 position="118" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="criarUsuario.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="login.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6454" topLine="172" />
-		</Cursor>
-	</File>
-	<File name="login.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2329" topLine="79" />
+			<Cursor1 position="453" topLine="15" />
 		</Cursor>
 	</File>
 	<File name="digitalbook.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -68,5 +69,45 @@
 			<Cursor1 position="19" topLine="0" />
 		</Cursor>
 	</File>
-	<EditorTabsLayout layout="07d511b0638b4df000000f9400000002=0;digitalbook:digitalbook.c,1;digitalbook:login.c,*2;digitalbook:criarUsuario.c,3;digitalbook:logo.c,4;digitalbook:menus.c,5;digitalbook:mensagens.c,6;digitalbook:mensagens.h@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=662;besth=308;minw=662;minh=308;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=07d511b0638b4df000000f9400000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
+	<File name="consultarUsuarios.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="33" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="criarUsuario.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="criarUsuario.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1716" topLine="345" />
+		</Cursor>
+	</File>
+	<File name="menus.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="20" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="mensagens.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="158" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="logo.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="33" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="logo.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="93" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="testes.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="286" topLine="3" />
+		</Cursor>
+	</File>
+	<EditorTabsLayout layout="07364ec0638f64c0000015e200000002=0;digitalbook:digitalbook.c,1;digitalbook:login.c,2;digitalbook:logo.c,3;digitalbook:menus.c,4;digitalbook:mensagens.c,5;digitalbook:criarUsuario.c,6;digitalbook:consultarUsuarios.c,7;digitalbook:editarUsuario.c,8;digitalbook:editarUsuario.h,9;digitalbook:testes.c,*10;digitalbook:alterarSenha.c,11;digitalbook:alterarSenha.h@layout2|name=dummy;caption=;state=2098174;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=662;besth=308;minw=662;minh=308;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=07364ec0638f64c0000015e200000002;caption=;state=2098172;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(5,0,0)=202|" />
 </CodeBlocks_layout_file>

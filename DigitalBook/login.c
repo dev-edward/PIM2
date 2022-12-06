@@ -7,7 +7,6 @@
 #define tamCampoUsuario 16
 #define tamCampoSenha 13
 
-//int tamCampoUsuario = 16, tamCampoSenha = 13;
 typedef struct {
 	int codusuario;
 	char usuario[tamCampoUsuario], senha[tamCampoSenha];
@@ -23,7 +22,7 @@ char contatenacao[60];
 
 int verificarUsuario(char usuario[tamCampoUsuario]) {
 	//abre o arquivo de login
-	arquivo = fopen("login.dat", "rb");
+	arquivo = fopen("usuarios.dat", "rb");
 	if (arquivo == NULL) {
 		printf("%sFalha ao abrir arquivo de login",tabs);
 		return 0;
@@ -138,12 +137,17 @@ int login(sUsuario *usuarioLogado){
                 }
             }
             if ((compararSenha(campoSenha)) ) {
+                    if(user.ativo==0){
+                        strcat(strcat(strcpy(contatenacao, "Usuário \""),user.usuario),"\" desativado, contate um administrador");
+                        avisoVermelho(contatenacao);
+                        limparAbaixo();
+                        return 2;
+                    }
                     usuarioLogado->codusuario = user.codusuario;
                     usuarioLogado->ativo = user.ativo;
                     usuarioLogado->perfil = user.perfil;
                     strcpy(usuarioLogado->usuario,user.usuario);
                     return 1;
-                break;
             }
             else {
                 avisoVermelho("Senha incorreta! Tente novamente");
